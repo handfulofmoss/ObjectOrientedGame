@@ -7,26 +7,33 @@ boolean moveUp;
 boolean moveDown;
 boolean moveLeft;
 boolean moveRight;
+boolean aboveWater;
 
 PVector position;
 PVector speed;
 PVector acceleration;
 
-float timer = 0;
-boolean timerOn = false;
-
 Otter player = new Otter();
+AirTimer timer = new AirTimer(); 
 
 void setup() {
   size(400, 400);
   background(190, 231, 232);
+  noStroke();
+  fill(232, 249, 250);
+  rect(0,0,400,80);
+  aboveWater=true;
   otterUp = loadImage("otterUp.png");
 }
 
 void draw() {
   background(190, 231, 232);
+  fill(232, 249, 250);
+  rect(0,0,400,80);
   player.drawOtter();
   player.movement();
+  timer.display();
+  timer.count();
 }
 
 void keyPressed() {

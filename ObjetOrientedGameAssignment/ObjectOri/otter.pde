@@ -1,10 +1,9 @@
 class Otter {
 
-
   Otter() {
-    position = new PVector(200, 200);
-    speed = new PVector(3,3);
-    acceleration = new PVector(9.81,9.81);
+    position = new PVector(300, 30);
+    speed = new PVector(2.5, 2.5);
+    //acceleration = new PVector(9.81,9.81);
   }
 
   void drawOtter() {
@@ -12,7 +11,6 @@ class Otter {
   }
 
   void movement() {
-    
     if (moveUp == true) {
       position.y = position.y - speed.y;
     }
@@ -24,6 +22,15 @@ class Otter {
     }
     if (moveRight == true) {
       position.x = position.x + speed.x;
+    }
+
+//if player is above water, movement is stoped
+    if (position.y < 30) {
+      position.y = 30;
+      aboveWater=true;
+    }
+    if (position.y > 60) {
+      aboveWater=false;
     }
   }
 }
