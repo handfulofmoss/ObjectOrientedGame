@@ -1,12 +1,14 @@
 class AirTimer {
+  //variable for the air timer
   int timerCount = 0;
   boolean timerOn = false;
   boolean gameLose = false;
 
   void display() {
-    //when above water air timer is reset
+    //when above water air timer is reset to off
     if (aboveWater == true) {
       timerOn=false;
+      //when not above water time is set back to on
     } else {
       timerOn = true;
     }
@@ -32,16 +34,21 @@ class AirTimer {
     }
     if (timerCount <= 0) {
       rect(14+140, 14, 30, 27);
+      //when air bar reaches 0, game condition is switched to lost so game over
+      //screen can be shown and game can be reset
       gameLose = true;
     }
   }
-
+ //<>//
   void count() {
+    //timer is set to a reasonable speed based on the current frame rate of the game
     if (timerOn == true) {
-      if (frameCount%20 == 0) {
+      if (frameCount%20 == 0) { //<>//
       timerCount = timerCount +1;
     }
     }
+    //when timer is off; player is above water, timer will reset and stay at 0
+    //untill underwater again
     if (timerOn == false) {
       timerCount = 0;
     }
