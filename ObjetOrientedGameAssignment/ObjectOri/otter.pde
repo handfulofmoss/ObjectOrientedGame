@@ -1,5 +1,6 @@
 class Otter {
 
+  //defines the current position and speed of the player
   Otter() {
     position = new PVector(300, 30);
     speed = new PVector(2.5, 2.5);
@@ -7,9 +8,11 @@ class Otter {
   }
 
   void drawOtter() {
+    //displays the player
     image(otterUp, position.x, position.y, otterUp.width/12, otterUp.height/12);
   }
 
+//variables for movement depending on direction
   void movement() {
     if (moveUp == true) {
       position.y = position.y - speed.y;
@@ -29,8 +32,9 @@ class Otter {
       position.y = 30;
       aboveWater=true;
     }
+    //checks for when player is above water or not
     if (position.y > 60) {
       aboveWater=false;
     }
   }
-}
+} //<>//

@@ -1,4 +1,6 @@
 class AirTimer {
+  
+  //variables for timer components
   int timerCount = 0;
   boolean timerOn = false;
   boolean gameLose = false;
@@ -32,16 +34,19 @@ class AirTimer {
     }
     if (timerCount <= 0) {
       rect(14+140, 14, 30, 27);
+      //when airtimer runs out game will be chaned to lose and game over screen will display
       gameLose = true;
     }
   }
 
-  void count() {
+  void count() { //<>//
+    //corrects the timer to be paced more reasonably based on the current frame rate
     if (timerOn == true) {
       if (frameCount%20 == 0) {
-      timerCount = timerCount +1;
+      timerCount = timerCount +1; //<>//
     }
     }
+    //when above the surface, the time will be reset untill condition is no longer met
     if (timerOn == false) {
       timerCount = 0;
     }
