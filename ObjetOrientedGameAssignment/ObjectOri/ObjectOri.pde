@@ -14,14 +14,14 @@ PVector speed;
 PVector acceleration;
 
 Otter player = new Otter();
-AirTimer timer = new AirTimer(); 
+AirTimer timer = new AirTimer();
 
 void setup() {
   size(400, 400);
   background(190, 231, 232);
   noStroke();
   fill(232, 249, 250);
-  rect(0,0,400,80);
+  rect(0, 0, 400, 80);
   aboveWater=true;
   otterUp = loadImage("otterUp.png");
 }
@@ -29,7 +29,7 @@ void setup() {
 void draw() {
   background(190, 231, 232);
   fill(232, 249, 250);
-  rect(0,0,400,80);
+  rect(0, 0, 400, 80);
   //displays needed assets
   player.drawOtter();
   player.movement();

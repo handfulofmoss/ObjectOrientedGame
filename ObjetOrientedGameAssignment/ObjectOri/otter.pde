@@ -1,7 +1,7 @@
 class Otter {
 
   Otter() {
-    
+
     //variables for the current player position
     position = new PVector(300, 30);
     speed = new PVector(2.5, 2.5);
@@ -28,7 +28,7 @@ class Otter {
       position.x = position.x + speed.x;
     }
 
-//if player is above water, movement is stoped
+    //if player is above water, movement is stoped
     if (position.y < 30) {
       position.y = 30;
       aboveWater=true;

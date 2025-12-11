@@ -44,8 +44,8 @@ class AirTimer {
     //timer is set to a reasonable speed based on the current frame rate of the game
     if (timerOn == true) {
       if (frameCount%20 == 0) { //<>//
-      timerCount = timerCount +1;
-    }
+        timerCount = timerCount +1;
+      }
     }
     //when timer is off; player is above water, timer will reset and stay at 0
     //untill underwater again
